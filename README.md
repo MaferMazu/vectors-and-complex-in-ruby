@@ -12,3 +12,10 @@ Ruby
 ruby main.rb
 ```
 
+## Disclaimer
+
+Para la version 3.0.0 de ruby, la implementación generada
+permitirá que toda clase que herede de Vector2(padre) podrá obtener 
+como resultados de aquellos métodos no redefinidos en las clases
+hijas, un elemento con el mismo tipo de la clase hija. 
+
