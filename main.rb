@@ -99,6 +99,21 @@ class Complejo < Vector2
         end
     end
 
+    def +(obj)
+        # La suma entre complejos
+        self.class.new(self.coordx+obj.coordx,self.coordy+obj.coordy)
+    end
+
+    def -@
+        # La negación de un complejo
+        self.class.new(-self.coordx,-self.coordy)
+    end
+
+    def -(obj)
+        # La resta entre dos complejos
+        self.class.new(self.coordx-obj.coordx,self.coordy-obj.coordy)
+    end
+
 end
 
 class Complejo2
@@ -159,7 +174,8 @@ class Complejo2
 
     def +(obj)
         # Suma de dos números complejos como un vector
-        self.vector + obj.vector
+        new_vector=self.vector + obj.vector
+        self.class.new(new_vector.coordx,new_vector.coordy)
     end
 
     def ==(obj)
@@ -169,12 +185,14 @@ class Complejo2
 
     def -@
         # Negativo del vector que representa al complejo
-        -self.vector
+        new_vector=-self.vector
+        self.class.new(new_vector.coordx,new_vector.coordy)
     end
 
     def -(obj)
         # Resta de complejos como si fuese un vector
-        self.vector - obj.vector
+        new_vector=self.vector - obj.vector
+        self.class.new(new_vector.coordx,new_vector.coordy)
     end
 
 end
